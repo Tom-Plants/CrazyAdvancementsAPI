@@ -9,9 +9,11 @@
 
   <name>CrazyAdvancementsAPI</name>
   <url>https://crazyadvancements.endercentral.eu</url>
-
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>15</maven.compiler.source>
+    <maven.compiler.target>15</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -21,14 +23,30 @@
            <version>1.16.5-R0.1-SNAPSHOT</version>
            <scope>provided</scope>
     </dependency>
+    <dependency>
+           <groupId>org.spigotmc</groupId>
+           <artifactId>spigot</artifactId>
+           <version>1.16.5-R0.1-SNAPSHOT</version>
+           <scope>provided</scope>
+    </dependency>
   </dependencies>
   
   <repositories>
-	 <repository>
+    <repository>
         <id>spigot-repo</id>
         <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
   </repositories>
   
-  
+    <build>
+        <resources>
+            <resource>
+                <directory>src/</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>
